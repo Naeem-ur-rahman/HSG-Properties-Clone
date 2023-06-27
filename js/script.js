@@ -7,7 +7,6 @@ window.addEventListener('DOMContentLoaded', () => {
      menuIcon.onclick = () => {
           //     menuIcon.classList.toggle('bx-x');
           navbar.classList.toggle('active');
-          console.log("Clicked");
      };
 
      cancelIcon.onclick = () => {
@@ -44,11 +43,13 @@ window.addEventListener('DOMContentLoaded', () => {
      prevBtn.addEventListener("click", function () {
           currentIndex = (currentIndex - 1 + items.length) % items.length;
           updateCarousel();
+
      });
 
      nextBtn.addEventListener("click", function () {
           currentIndex = (currentIndex + 1) % items.length;
           updateCarousel();
+
      });
 
      function updateCarousel() {
@@ -57,24 +58,47 @@ window.addEventListener('DOMContentLoaded', () => {
           container.style.transform = `translateX(${translateX}px)`;
      }
 
+     // home carosel end
+
+     // sale Carosel Code
+
+     const s_container = document.querySelector(".sale_carousel-container");
+     const s_prevBtn = document.querySelector(".sale_carousel-control.prev");
+     const s_nextBtn = document.querySelector(".sale_carousel-control.next");
+     const s_items = document.querySelectorAll(".sale_carousel-item");
+     let s_currentIndex = 0;
+
+     s_prevBtn.addEventListener("click", function () {
+          s_currentIndex = (s_currentIndex - 1 + s_items.length) % s_items.length;
+          updateCarousel_sale();
+          console.log("Clicked prev");
+     });
+
+     s_nextBtn.addEventListener("click", function () {
+          s_currentIndex = (s_currentIndex + 1) % s_items.length;
+          updateCarousel_sale();
+          console.log("Clicked next");
+     });
+
+     function updateCarousel_sale() {
+          const s_itemWidth = s_items[0].offsetWidth;
+          // const s_translateX = -s_currentIndex * s_itemWidth;
+          const s_translateX = -s_currentIndex * 33;
+          s_container.style.transform = `translateX(${s_translateX}%)`;
+     }
+
+
      // Resize event listener to update the carousel on window resize
      window.addEventListener("resize", function () {
           updateCarousel();
+          updateCarousel_sale();
      });
 
      // Initial update of the carousel on page load
      updateCarousel();
+     updateCarousel_sale();
 
-
-
-
-
-
-
-
-
-
-
+     // sale carosel end
 
 
 
