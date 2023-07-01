@@ -15,6 +15,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
      window.onscroll = () => {
           navbar.classList.remove('active');
+          //inscroll add sticky class to header
+          let header = document.querySelector('header');
+          header.classList.toggle('sticky', window.scrollY > 50);
      };
 
      //// this is to prevent menu list to not clickable
