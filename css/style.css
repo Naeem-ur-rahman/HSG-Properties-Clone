@@ -12,7 +12,7 @@
 :root {
      --main-color: blue;
      --bg-color: white;
-     --bg-second-color: rgb(238, 236, 236);
+     --bg-second-color: rgb(248, 248, 248);
      --text-color: rgba(0, 0, 0, 0.8);
      --border: .2rem solid #444;
      --border-second: .2rem solid rgb(255, 255, 255);
@@ -25,7 +25,7 @@ html {
 }
 
 section {
-     min-height: 100vh;
+     min-height: auto;
 }
 
 .heading {
@@ -97,7 +97,7 @@ section {
 
 .navbar ul a {
      color: black;
-     transition: .2s ease;
+     transition: .2s ease-in;
 }
 
 .navbar ul a:hover {
@@ -120,6 +120,7 @@ section {
      border-radius: .5rem;
      box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
      display: none;
+     transition: .2s ease-in;
 }
 
 .navbar ul li:hover .dropdown {
@@ -657,6 +658,121 @@ section {
      align-items: center;
 }
 
+.customer {
+     background-color: var(--bg-second-color);
+     padding: 1rem 3rem;
+}
+
+.customer .heading {
+     padding-top: 3rem;
+
+}
+
+.customer .container {
+     overflow: auto;
+     display: flex;
+     scroll-snap-type: x mandatory;
+     width: 100%;
+     gap: 3rem;
+     padding: 1rem 0;
+}
+
+.customer .container::-webkit-scrollbar {
+     width: 0.5em;
+     background-color: transparent;
+}
+
+.customer .container::-webkit-scrollbar-thumb {
+     background-color: transparent;
+}
+
+@keyframes carouselAnimation {
+     0% {
+          transform: translateX(0);
+     }
+
+     20% {
+          transform: translateX(-100%);
+     }
+
+     40% {
+          transform: translateX(-210%);
+     }
+
+     60% {
+          transform: translateX(-310%);
+     }
+
+     80% {
+          transform: translateX(-420%);
+     }
+
+     95% {
+          transform: translateX(-520%);
+     }
+
+     /* Add more keyframes as needed for additional items */
+}
+
+.customer .container:hover .item {
+     animation-play-state: running;
+}
+
+.customer .container .item {
+     position: relative;
+     flex-shrink: 0;
+     scroll-snap-align: start;
+     transition: transform 1s ease;
+     flex: 0 0 50%;
+     animation: carouselAnimation 15s infinite;
+     animation-play-state: paused;
+     /* other design */
+     padding: 7rem 4rem 1rem;
+     background-color: var(--bg-color);
+     border-radius: 1rem;
+     box-shadow: var(--box-shadow);
+}
+
+.customer .container .item p {
+     font-size: 1.5rem;
+     line-height: 3rem;
+     font-weight: 500;
+}
+
+.customer .container .item .qoutes {
+     position: absolute;
+     top: 1rem;
+     left: 1.5rem;
+     background-color: var(--main-color);
+     padding: 1rem;
+     border-radius: 10rem;
+}
+
+.customer .container .item .qoutes i {
+     color: var(--bg-color);
+     font-size: 2rem;
+}
+
+.customer .container .item .profile {
+     display: flex;
+     gap: 1rem;
+     align-items: center;
+
+}
+
+.customer .container .item .profile .pic i {
+     font-size: 10rem;
+}
+
+.customer .container .item .profile h2 {
+     font-size: 2.5rem;
+}
+
+.stars i {
+     padding-top: 1rem;
+     color: rgb(243, 243, 40);
+     font-size: 2rem;
+}
 
 @media (width<992px) {
      html {
@@ -835,6 +951,10 @@ section {
      .search .background .right .btn {
           margin-bottom: 3rem;
           margin-top: 2rem;
+     }
+
+     .customer .container .item {
+          flex: 0 0 100%;
      }
 }
 

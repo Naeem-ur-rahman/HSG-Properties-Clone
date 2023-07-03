@@ -103,7 +103,4 @@ window.addEventListener('DOMContentLoaded', () => {
 
      // sale carosel end
 
-
-
-
 });
