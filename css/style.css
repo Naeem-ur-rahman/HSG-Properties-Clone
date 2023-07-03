@@ -663,12 +663,18 @@ section {
      padding: 1rem 3rem;
 }
 
-.customer .heading {
+.partners {
+     padding: 1rem 3rem;
+}
+
+.customer .heading,
+.partners .heading {
      padding-top: 3rem;
 
 }
 
-.customer .container {
+.customer .container,
+.partners .container {
      overflow: auto;
      display: flex;
      scroll-snap-type: x mandatory;
@@ -677,12 +683,14 @@ section {
      padding: 1rem 0;
 }
 
-.customer .container::-webkit-scrollbar {
+.customer .container::-webkit-scrollbar,
+.partners .container::-webkit-scrollbar {
      width: 0.5em;
      background-color: transparent;
 }
 
-.customer .container::-webkit-scrollbar-thumb {
+.customer .container::-webkit-scrollbar-thumb,
+.partners .container::-webkit-scrollbar-thumb {
      background-color: transparent;
 }
 
@@ -714,7 +722,8 @@ section {
      /* Add more keyframes as needed for additional items */
 }
 
-.customer .container:hover .item {
+.customer .container:hover .item,
+.partners .container:hover .item {
      animation-play-state: running;
 }
 
@@ -731,6 +740,23 @@ section {
      background-color: var(--bg-color);
      border-radius: 1rem;
      box-shadow: var(--box-shadow);
+     margin: 1rem;
+}
+
+.partners .container .item {
+     flex-shrink: 0;
+     scroll-snap-align: start;
+     transition: transform 1s ease;
+     flex: 0 0 25%;
+     animation: carouselAnimation 15s infinite;
+     animation-play-state: paused;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+.partners .container .item img {
+     width: 130px;
 }
 
 .customer .container .item p {
@@ -774,6 +800,141 @@ section {
      font-size: 2rem;
 }
 
+.video .container {
+     display: flex;
+     justify-content: center;
+}
+
+video {
+     width: 100%;
+     margin-bottom: -10px;
+}
+
+footer {
+     background: #1c232b;
+}
+
+.footer .box-container {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+     gap: 2rem;
+     align-items: flex-start;
+     padding: 2rem;
+     padding-top: 3rem;
+}
+
+.footer .box-container .box1 {
+     color: rgba(255, 255, 255, 1);
+     margin-top: 2rem;
+}
+
+.footer .box-container .box1 .logo img {
+     height: 80px;
+}
+
+.footer .box-container .box1 p {
+     font-size: 1.5rem;
+     line-height: 3rem;
+     margin-top: 2rem;
+}
+
+.footer .box-container .box1 .links {
+     display: flex;
+     gap: 1rem;
+     align-items: center;
+     flex-wrap: wrap;
+     margin-top: 3rem;
+}
+
+.footer .box-container .box1 .links a {
+     background: white;
+     border-radius: 3rem;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 35px;
+     width: 35px;
+}
+
+.footer .box-container .box1 .links a i {
+     color: #1c232b;
+     font-size: 2.5rem;
+     padding: 1rem;
+}
+
+.footer .box-container .box1 .links a:hover i {
+     padding-right: 1rem;
+}
+
+.footer .box-container .box1 h3 {
+     font-size: 2.5rem;
+     text-transform: capitalize;
+     margin-bottom: 2rem;
+}
+
+.footer .box-container .box1 a {
+     display: block;
+     padding: .6rem 0;
+     font-size: 1.7rem;
+     color: rgba(255, 255, 255, 1);
+}
+
+
+.footer .box-container .box1 a i {
+     padding-right: 1rem;
+     transition: .2s linear;
+     color: rgba(255, 255, 255, 1);
+}
+
+.footer .box-container .box1 a:hover i {
+     padding-right: 2rem;
+}
+
+.footer .credit {
+     padding: 2rem;
+     text-align: center;
+     border-top: var(--border);
+     font-size: 1.8rem;
+     padding-bottom: 3rem;
+     color: rgba(255, 255, 255, 1);
+     display: flex;
+     justify-content: space-between;
+     gap: 1rem;
+     flex-wrap: wrap;
+}
+
+.top {
+     position: fixed;
+     bottom: 1rem;
+     right: 2rem;
+     z-index: 100;
+}
+
+.top a {
+     background-color: var(--main-color);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: .3rem;
+}
+
+.top a i {
+     font-size: 4rem;
+     color: rgba(255, 255, 255, 1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (width<992px) {
      html {
           font-size: 50%;
@@ -782,10 +943,6 @@ section {
      #hamburg {
           display: block;
      }
-
-     /* .header {
-          position: relative;
-     } */
 
      .navbar {
           position: absolute;
@@ -851,6 +1008,10 @@ section {
 
      .search .background {
           padding: 0 2%;
+     }
+
+     .footer .credit {
+          justify-content: center;
      }
 }
 
@@ -956,6 +1117,10 @@ section {
      .customer .container .item {
           flex: 0 0 100%;
      }
+
+     .partners .container .item {
+          flex: 0 0 50%;
+     }
 }
 
 @media (width<601px) {
@@ -973,5 +1138,11 @@ section {
 
      .box {
           width: 90%;
+     }
+}
+
+@media (width<401px) {
+     .partners .container .item {
+          flex: 0 0 100%;
      }
 }
