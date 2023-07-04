@@ -236,8 +236,10 @@ section {
      z-index: 90;
      position: absolute;
      top: 47rem;
-     left: 12%;
-     right: 12%;
+     /* left: 12%; */
+     /* right: 12%; */
+     left: 50%;
+     transform: translate(-50%, -50%);
      width: 80vw;
      font-weight: 700;
 }
@@ -343,7 +345,7 @@ section {
      width: 100%;
      height: auto;
      justify-content: space-around;
-     padding: 0 5%;
+     padding: 4% 5%;
      gap: 3rem;
      flex-wrap: wrap;
      flex-basis: 500px;
@@ -357,6 +359,7 @@ section {
      box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
      /* border: var(--border); */
      padding: 2rem;
+     z-index: 10;
 }
 
 .box .box-up {
@@ -865,6 +868,61 @@ footer {
 
 /* Index Page code end page  */
 
+.buy-home {
+     position: relative;
+     height: max-content;
+     background-color: var(--light-black);
+}
+
+.buy-home .img-container {
+     margin-top: 90px;
+     position: relative;
+     height: 60vh;
+}
+
+.buy-home .img-container .content {
+     position: absolute;
+     top: 35%;
+     text-align: center;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     color: var(--bg-color);
+     font-size: 2rem;
+     font-weight: 700;
+     width: 80%;
+}
+
+.buy-home .img-container .content h2 {
+     color: var(--bg-color);
+     font-weight: 600;
+}
+
+.buy-home .img-container .content .links {
+     margin-bottom: 2rem;
+}
+
+.buy-home .img-container .content a {
+     color: var(--bg-color);
+}
+
+.buy-home .img-container .content a i {
+     font-size: 2rem;
+     padding-right: 1rem;
+}
+
+.buy-home .img-container .content a:hover {
+     color: var(--main-color);
+}
+
+.buy-home .img-container img {
+     width: 100%;
+     object-fit: cover;
+     height: 100%;
+}
+
+.buy-home .form-container {
+     top: 30rem;
+}
 
 
 
@@ -973,14 +1031,26 @@ footer {
           background-color: #3d4854e6;
      }
 
-     .form-container {
+     .form-container,
+     .buy-home .form-container {
           position: relative;
           top: 0;
           margin-top: 3rem;
           width: 90%;
           right: 5%;
           left: 5%;
+          transform: translate(0);
           z-index: 0;
+     }
+
+     .buy-home {
+          height: 120vh;
+          height: max-content;
+     }
+
+     .buy-home .img-container .form-container {
+          position: static;
+          top: 0rem;
      }
 
      .form-container .heading {
@@ -1088,6 +1158,7 @@ footer {
 
 
      /* Index Page code end page  */
+
 }
 
 @media (width<401px) {
