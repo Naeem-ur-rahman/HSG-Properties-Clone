@@ -39,7 +39,7 @@ section {
 }
 
 .heading {
-     font-size: 3.5rem;
+     font-size: 3.9rem;
      line-height: normal;
      margin-bottom: 3rem;
      color: var(--text-color);
@@ -85,7 +85,7 @@ section {
 }
 
 .header .logo img {
-     height: 60px;
+     height: 65px;
 }
 
 .header.sticky {
@@ -146,7 +146,7 @@ section {
 
 .header .btn {
      background-color: var(--main-color);
-     padding: 10px;
+     padding: 1.5rem 1rem;
      color: var(--bg-color);
      border: var(--border-blue);
      border-radius: .5rem;
@@ -178,7 +178,7 @@ section {
 }
 
 .home .carousel {
-     position: relative;
+
      overflow: hidden;
      width: 100%;
      /* Adjust the width of the carousel as needed */
@@ -204,6 +204,7 @@ section {
      max-width: 100%;
      height: auto;
      object-fit: contain;
+     position: relative;
 }
 
 .home .carousel-control {
@@ -235,7 +236,7 @@ section {
      font-size: 1.5rem;
      z-index: 90;
      position: absolute;
-     top: 47rem;
+     top: 80%;
      /* left: 12%; */
      /* right: 12%; */
      left: 50%;
@@ -298,7 +299,7 @@ section {
 
 .form-container .down div input {
      padding: 1rem;
-     width: 100px;
+     width: 100%;
      height: 40px;
 }
 
@@ -369,7 +370,8 @@ section {
 
 .box .box-up img {
      width: 100%;
-     object-fit: contain;
+     height: 100%;
+     object-fit: cover;
 }
 
 .box .box-up::before {
@@ -390,14 +392,19 @@ section {
 }
 
 .box-content h3 {
-     font-size: 1.5rem;
+     font-size: 1.6rem;
      margin-top: 1.5rem;
+     word-wrap: none;
+}
+
+.box-content h3 a {
+     color: var(--light-black);
 }
 
 .box-content p {
-     font-size: 1.3rem;
+     font-size: 1.5rem;
      font-weight: 100;
-     margin-top: .3rem;
+     margin-top: 1rem;
      color: grey;
 }
 
@@ -405,6 +412,8 @@ section {
      background-color: var(--main-color);
      color: white;
      border: var(--border-blue);
+     padding: 1rem;
+     border-radius: .3rem;
 }
 
 .btn-container .btn:hover {
@@ -435,6 +444,10 @@ section {
      display: flex;
      justify-content: center;
      align-items: center;
+}
+
+.box-content .icon span p {
+     margin-top: 0;
 }
 
 .box-content .links,
@@ -806,11 +819,11 @@ footer {
 .footer .box-container .box1 .links a i {
      color: var(--light-black);
      font-size: 2.5rem;
-     padding: 1rem;
+     padding: 0;
 }
 
-.footer .box-container .box1 .links a:hover i {
-     padding-right: 1rem;
+.footer .box-container .box1 .links a {
+     padding: 1rem;
 }
 
 .footer .box-container .box1 h3 {
@@ -819,22 +832,21 @@ footer {
      margin-bottom: 2rem;
 }
 
+.footer .box-container .box1 a i {
+     padding-right: 1rem;
+}
+
 .footer .box-container .box1 a {
      display: block;
      padding: .6rem 0;
      font-size: 1.7rem;
      color: var(--bg-color);
-}
-
-
-.footer .box-container .box1 a i {
-     padding-right: 1rem;
      transition: .2s linear;
-     color: var(--bg-color);
+     padding-left: 1rem;
 }
 
-.footer .box-container .box1 a:hover i {
-     padding-right: 2rem;
+.footer .box-container .box1 a:hover {
+     padding-left: 2rem;
 }
 
 .footer .credit {
@@ -876,6 +888,7 @@ footer {
 .buy-home {
      position: relative;
      height: max-content;
+     min-height: 400px;
      background-color: var(--light-black);
 }
 
@@ -883,6 +896,7 @@ footer {
      margin-top: 90px;
      position: relative;
      height: 60vh;
+     min-height: 400px;
 }
 
 .buy-home .img-container .content {
@@ -892,7 +906,7 @@ footer {
      left: 50%;
      transform: translate(-50%, -50%);
      color: var(--bg-color);
-     font-size: 2rem;
+     font-size: 1.7rem;
      font-weight: 700;
      width: 80%;
 }
@@ -911,7 +925,7 @@ footer {
 }
 
 .buy-home .img-container .content a i {
-     font-size: 2rem;
+     font-size: 1.7rem;
      padding-right: 1rem;
 }
 
@@ -926,7 +940,42 @@ footer {
 }
 
 .buy-home .form-container {
-     top: 30rem;
+     top: 80%;
+}
+
+.buy .sale-container {
+     padding: 4rem 1rem;
+     gap: .5rem;
+}
+
+.buy .sale-container .box {
+     width: 24%;
+     padding: 0;
+     margin: .3rem;
+}
+
+.buy .sale-container .box .box-up {
+     position: relative;
+     height: 250px;
+}
+
+.buy .sale-container .box .box-up .btn {
+     position: absolute;
+     bottom: 1rem;
+     right: 0rem;
+     z-index: 200;
+     background-color: var(--light-black);
+     color: var(--bg-color);
+     cursor: pointer;
+     padding: .7rem 1rem;
+}
+
+.buy .sale-container .box .box-content {
+     padding: 1rem;
+}
+
+.buy .sale-container .box .box-content>p {
+     margin-bottom: 1rem;
 }
 
 /* start property section */
@@ -945,6 +994,7 @@ footer {
      gap: 1rem;
      width: 100%;
      overflow: hidden;
+     padding: 2% 5%;
 }
 
 
@@ -987,9 +1037,9 @@ footer {
      width: 100%;
 }
 
-.product .container .left .row .image-container .sub-image:hover img {
+/* .product .container .left .row .image-container .sub-image:hover img {
      animation-play-state: running;
-}
+} */
 
 .product .container .left .row .image-container .sub-image img {
      height: 7rem;
@@ -1000,15 +1050,15 @@ footer {
      flex-shrink: 0;
      scroll-snap-align: start;
      flex: 0 0 10%;
-     animation: carouselAnimation 15s infinite;
-     animation-play-state: paused;
+     /* animation: carouselAnimation 15s infinite; */
+     /* animation-play-state: paused; */
 }
 
 .product .container .left .row h2 {
      font-size: 2.5rem;
      font-weight: 500;
      margin-bottom: 1.5rem;
-     margin-top: .5rem;
+     margin-top: 2rem;
      color: var(--light-black);
 }
 
@@ -1023,6 +1073,14 @@ footer {
      font-size: 1.5rem;
      font-weight: 600;
      color: grey;
+}
+
+.product>.container .left>.row>span {
+     margin-top: 2rem;
+}
+
+.product .container .left .link:hover a {
+     color: var(--main-color);
 }
 
 .product .container .left .row p {
@@ -1141,14 +1199,16 @@ footer {
 }
 
 .call-agent .img-container .content .btn {
-     background-color: var(--main-color);
-     color: var(--bg-color);
+     background-color: rgba(74, 74, 236, 0.336);
      border: var(--border-blue);
+     color: var(--bg-color);
+
 }
 
 .call-agent .img-container .content .btn:hover {
-     background-color: var(--bg-color);
-     color: var(--main-color);
+     background-color: var(--main-color);
+     color: var(--bg-color);
+     border: var(--border-blue);
 }
 
 
