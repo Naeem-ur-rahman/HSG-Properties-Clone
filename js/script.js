@@ -33,4 +33,15 @@ window.addEventListener('DOMContentLoaded', () => {
           });
      }
 
+
+     let mainImage = document.querySelector('.product .container .left .row .image-container .main-image img');
+     let subImages = document.querySelectorAll('.product .container .left .row .image-container .sub-image img');
+
+     subImages.forEach(images => {
+          images.onclick = () => {
+               src = images.getAttribute('src');
+               mainImage.src = src;
+          }
+     });
+
 });

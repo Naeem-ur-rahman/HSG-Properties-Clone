@@ -437,14 +437,16 @@ section {
      align-items: center;
 }
 
-.box-content .links {
+.box-content .links,
+.product .links {
      display: flex;
      justify-content: space-between;
      align-items: center;
      margin-top: 2rem;
 }
 
-.box-content .links a {
+.box-content .links a,
+.product .links a {
      height: 50px;
      width: 50px;
      background-color: var(--main-color);
@@ -457,16 +459,19 @@ section {
      border: var(--border-blue);
 }
 
-.box-content .links .whatsapp {
+.box-content .links .whatsapp,
+.product .links .whatsapp {
      background-color: var(--green);
      border: var(--border-green);
 }
 
-.box-content .links .whatsapp:hover {
+.box-content .links .whatsapp:hover,
+.product .links .whatsapp:hover {
      color: var(--green);
 }
 
 .box-content .links a:hover,
+.product .links a:hover,
 .view-more-btn .btn:hover {
      background-color: white;
      color: var(--main-color);
@@ -924,13 +929,227 @@ footer {
      top: 30rem;
 }
 
+/* start property section */
+
+.property-details .img-container .content {
+     top: 50%;
+}
+
+.product {
+     width: 100vw;
+     padding: 1rem;
+}
+
+.product .container {
+     display: flex;
+     gap: 1rem;
+     width: 100%;
+     overflow: hidden;
+}
 
 
+.product .container .left {
+     padding: 2rem;
+     background-color: var(--white);
+     box-shadow: var(--box-shadow);
+     margin-top: 1rem;
+     width: 70%;
+}
 
 
+.product .container .left .row .image-container {
+     margin-bottom: 2rem;
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+}
 
+.product .container .left .row .image-container .main-image {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+}
 
+.product .container .left .row .image-container .main-image img {
+     height: 45rem;
+     width: 100%;
+     object-fit: contain;
+}
 
+.product .container .left .row .image-container .sub-image {
+     margin-top: 2rem;
+     gap: 1.5rem;
+     display: flex;
+     justify-content: flex-start;
+     overflow: auto;
+     scroll-snap-type: x mandatory;
+     width: 100%;
+}
+
+.product .container .left .row .image-container .sub-image:hover img {
+     animation-play-state: running;
+}
+
+.product .container .left .row .image-container .sub-image img {
+     height: 7rem;
+     width: 10rem;
+     object-fit: contain;
+     cursor: pointer;
+     border: var(--border);
+     flex-shrink: 0;
+     scroll-snap-align: start;
+     flex: 0 0 10%;
+     animation: carouselAnimation 15s infinite;
+     animation-play-state: paused;
+}
+
+.product .container .left .row h2 {
+     font-size: 2.5rem;
+     font-weight: 500;
+     margin-bottom: 1.5rem;
+     margin-top: .5rem;
+     color: var(--light-black);
+}
+
+.product .container .left .row span {
+     font-size: 1.5rem;
+     font-weight: 600;
+     color: grey;
+     margin: 1rem 0;
+}
+
+.product .container .left .row span a {
+     font-size: 1.5rem;
+     font-weight: 600;
+     color: grey;
+}
+
+.product .container .left .row p {
+     font-size: 1.5rem;
+     line-height: 2.5rem;
+     color: grey;
+}
+
+.product .container .left .row p a {
+     font-size: 2rem;
+     color: grey;
+}
+
+.product .container .left .row .features {
+     display: flex;
+     gap: 2rem;
+     border: var(--border);
+     padding: 2rem;
+     justify-content: space-around;
+     align-items: center;
+}
+
+.product .container .left .row .features p {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+.product .container .left .row .features p i {
+     font-size: 2rem;
+}
+
+.product .container .left .row .details {
+     display: flex;
+     gap: 2rem;
+     border: var(--border);
+     padding: 2rem;
+     justify-content: space-around;
+     align-items: center;
+     text-align: center;
+}
+
+.product .container .right form {
+     /* width: 30vw; */
+     background-color: var(--bg-second-color);
+     border-radius: .5rem;
+     box-shadow: var(--box-shadow);
+     display: flex;
+     flex-direction: column;
+     padding: 1rem;
+     margin: 1rem;
+     gap: 1rem;
+}
+
+.product .container .right form .agent {
+     display: flex;
+     gap: 2rem;
+}
+
+.product .container .right form .agent h2 {
+     font-size: 2rem;
+     font-weight: 400;
+}
+
+.product .container .right form .agent h2 span {
+     font-weight: 700;
+}
+
+.product .container .right form .agent .profile-pic img {
+     width: 120px;
+     height: auto;
+}
+
+.product .container .right form p {
+     text-align: center;
+     font-size: 1.5rem;
+     padding: 1rem .5rem;
+}
+
+.product .container .right form input,
+.product .container .right form textarea {
+     border: var(--border);
+     border-radius: .5rem;
+     padding: 1rem;
+     resize: none;
+}
+
+.product .container .right form textarea {
+     height: 120px;
+}
+
+.product .container .right form .flex {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     font-size: 1.2rem;
+}
+
+.product .container .right form .flex .btn {
+     background-color: var(--main-color);
+     color: var(--bg-color);
+     border: var(--border-blue);
+     cursor: pointer;
+}
+
+.product .container .right form .flex .btn:hover {
+     background-color: var(--bg-color);
+     color: var(--main-color);
+     border: var(--border-blue);
+     cursor: pointer;
+}
+
+.call-agent .img-container .content h2 {
+     font-weight: 500;
+     font-size: 3rem;
+}
+
+.call-agent .img-container .content .btn {
+     background-color: var(--main-color);
+     color: var(--bg-color);
+     border: var(--border-blue);
+}
+
+.call-agent .img-container .content .btn:hover {
+     background-color: var(--bg-color);
+     color: var(--main-color);
+}
 
 
 @media (width<992px) {
@@ -1014,7 +1233,15 @@ footer {
 
      /* Index Page code end page  */
 
+     /* start property detail page  */
 
+     .product .container {
+          flex-direction: column;
+     }
+
+     .product .container .left {
+          width: 100%;
+     }
 }
 
 @media (width<778px) {
