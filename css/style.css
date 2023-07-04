@@ -10,12 +10,22 @@
 }
 
 :root {
-     --main-color: blue;
-     --bg-color: white;
-     --bg-second-color: rgb(248, 248, 248);
+     --main-color: #1566a0;
+     --green: #069223;
+     --light-black: #3d4755;
+
+     --bg-color: #fff;
+     --bg-second-color: #f8f9fa;
+
      --text-color: rgba(0, 0, 0, 0.8);
-     --border: .2rem solid #444;
-     --border-second: .2rem solid rgb(255, 255, 255);
+
+     --border: .1rem solid grey;
+     --border-second: .1rem solid rgb(255, 255, 255);
+
+     --border-blue: .1rem solid var(--main-color);
+     --border-green: .1rem solid var(--green);
+     --border-light-black: .1rem solid var(--light-black);
+
      --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
 }
 
@@ -79,7 +89,7 @@ section {
 }
 
 .header.sticky {
-     border-bottom: .1rem solid rgba(0, 0, 0, .2);
+     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
 }
 
 .header {
@@ -138,13 +148,13 @@ section {
      background-color: var(--main-color);
      padding: 10px;
      color: var(--bg-color);
-     border: var(--border-second);
+     border: var(--border-blue);
      border-radius: .5rem;
      display: inline-block;
 }
 
 .header .btn:hover {
-     border: var(--border);
+     border: var(--border-blue);
      background-color: var(--bg-color);
      color: var(--main-color);
 }
@@ -234,7 +244,7 @@ section {
 
 .form-container .heading {
      display: none;
-     color: #fff;
+     color: var(--bg-color);
 }
 
 .form-container .up {
@@ -344,26 +354,36 @@ section {
      min-width: 250px;
      background-color: var(--bg-color);
      /* box-shadow: var(--box-shadow); */
-     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
-     border: var(--border);
+     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+     /* border: var(--border); */
      padding: 2rem;
 }
 
 .box .box-up {
      width: 100%;
-}
-
-.box .box-up img:hover {
-     box-shadow: inset 0 0 0 400px #00000000;
+     position: relative;
 }
 
 .box .box-up img {
      width: 100%;
      object-fit: contain;
-     opacity: 10rem;
-     /* box-shadow: inset 0 0 0 4000px #000000aa; */
-     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
-     z-index: -1;
+}
+
+.box .box-up::before {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.5);
+     /* Change the color and opacity to adjust the shade */
+     opacity: 1;
+     transition: opacity 0.3s ease;
+}
+
+.box .box-up:hover::before {
+     opacity: 0;
 }
 
 .box-content h3 {
@@ -381,7 +401,7 @@ section {
 .btn-container .btn {
      background-color: var(--main-color);
      color: white;
-     border: .01rem solid rgb(51, 50, 50);
+     border: var(--border-blue);
 }
 
 .btn-container .btn:hover {
@@ -431,7 +451,16 @@ section {
      justify-content: center;
      align-items: center;
      border-radius: .2rem;
-     border: .01rem solid rgb(51, 50, 50);
+     border: var(--border-blue);
+}
+
+.box-content .links .whatsapp {
+     background-color: var(--green);
+     border: var(--border-green);
+}
+
+.box-content .links .whatsapp:hover {
+     color: var(--green);
 }
 
 .box-content .links a:hover,
@@ -450,88 +479,15 @@ section {
      margin: 2rem 0;
      background-color: var(--main-color);
      color: white;
-     border: .01rem solid rgb(51, 50, 50);
+     border: var(--border-blue);
 }
-
-/* .sale_carousel {
-     position: relative;
-     overflow: hidden;
-     width: 100vw;
-     /* Adjust the width of the carousel as needed */
-/* max-width: 100vw; */
-/* Set a maximum width for the carousel */
-/* height: auto; */
-/* max-height: 100vh; */
-/* Adjust the height of the carousel as needed */
-/* }
-
-.sale_carousel-container {
-     display: flex;
-     transition: transform 0.5s ease;
-     width: 100%;
-     height: auto;
-     justify-content: space-around;
-     gap: 7rem;
-}
-
-.sale_carousel-item {
-     flex: 0 0 27%;
-}
-
-.sale_carousel-item .box {
-     width: 27vw;
-     background-color: var(--bg-color);
-     box-shadow: var(--box-shadow);
-     border: var(--border);
-     padding: 1rem;
-}
-.sale_carousel-item .box .box-up {
-     width: 100%;     
-     background-color: black;
-}
-
-.sale_carousel-item .box .box-up img {
-     width: 100%;
-     height: 250px;
-     object-fit: fill;
-}
-
-.sale_carousel-item img {
-     max-width: 100%;
-     height: auto;
-     object-fit: contain;
-}
-
-.sale_carousel-control {
-     position: absolute;
-     top: 50%;
-     transform: translateY(-50%);
-     width: 30px;
-     height: 30px;
-     background-color: rgba(0, 0, 0, 0.5);
-     color: #fff;
-     text-align: center;
-     line-height: 30px;
-     font-size: 20px;
-     text-decoration: none;
-}
-
-.sale_carousel-control.prev {
-     left: 15px;
-     cursor: pointer;
-}
-
-.sale_carousel-control.next {
-     right: 15px;
-     cursor: pointer;
-} */
 
 .buy {
      min-height: auto;
 }
 
 .buy .background {
-     background-image: url(../img/buyers-tenants.png);
+     background-image: linear-gradient(rgb(56 106 138 / 79%), rgb(56 106 138 / 79%)), url(../img/buyers-tenants.png);
      background-repeat: no-repeat;
      background-size: cover;
      width: 100%;
@@ -541,18 +497,6 @@ section {
      align-items: center;
      position: relative;
      padding: 0 7%;
-}
-
-.buy .background::before {
-     content: "";
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     background-color: rgba(74, 74, 138, 0.5);
-     /* Adjust the color and opacity */
-     z-index: 1;
 }
 
 .buy .background .left {
@@ -572,11 +516,17 @@ section {
 .search .background .left p {
      font-size: 1.7rem;
      line-height: 2rem;
+     color: var(--bg-second-color);
 }
 
 .buy .background .left .btn,
 .search .background .right .btn {
      margin-top: 2rem;
+}
+
+.buy .background .left .btn:hover,
+.search .background .right .btn:hover {
+     background-color: var(--light-black);
 }
 
 .buy .background .right {
@@ -602,11 +552,12 @@ section {
 
 .buy .background .right form .btn {
      background-color: var(--main-color);
-     color: white;
+     border: var(--border-blue);
+     color: var(--bg-second-color);
 }
 
 .buy .background .right form .btn:hover {
-     background-color: white;
+     background-color: var(--bg-second-color);
      color: var(--main-color);
 }
 
@@ -619,7 +570,7 @@ section {
 }
 
 .search .background {
-     background-image: url(../img/sell-rent.webp);
+     background-image: linear-gradient(rgb(56 106 138 / 79%), rgb(56 106 138 / 79%)), url(../img/sell-rent.webp);
      background-repeat: no-repeat;
      background-size: cover;
      width: 100%;
@@ -629,18 +580,6 @@ section {
      align-items: center;
      position: relative;
      padding: 0 7%;
-}
-
-.search .background::before {
-     content: "";
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     background-color: rgba(74, 74, 138, 0.5);
-     /* Adjust the color and opacity */
-     z-index: 1;
 }
 
 .search .background .left {
@@ -824,7 +763,7 @@ footer {
 }
 
 .footer .box-container .box1 {
-     color: rgba(255, 255, 255, 1);
+     color: var(--bg-color);
      margin-top: 2rem;
 }
 
@@ -847,7 +786,7 @@ footer {
 }
 
 .footer .box-container .box1 .links a {
-     background: white;
+     background: var(--bg-color);
      border-radius: 3rem;
      display: flex;
      justify-content: center;
@@ -857,7 +796,7 @@ footer {
 }
 
 .footer .box-container .box1 .links a i {
-     color: #1c232b;
+     color: var(--light-black);
      font-size: 2.5rem;
      padding: 1rem;
 }
@@ -876,14 +815,14 @@ footer {
      display: block;
      padding: .6rem 0;
      font-size: 1.7rem;
-     color: rgba(255, 255, 255, 1);
+     color: var(--bg-color);
 }
 
 
 .footer .box-container .box1 a i {
      padding-right: 1rem;
      transition: .2s linear;
-     color: rgba(255, 255, 255, 1);
+     color: var(--bg-color);
 }
 
 .footer .box-container .box1 a:hover i {
@@ -891,12 +830,13 @@ footer {
 }
 
 .footer .credit {
-     padding: 2rem;
+     padding: 1.8rem;
      text-align: center;
-     border-top: var(--border);
-     font-size: 1.8rem;
+     background-color: #081637;
+     font-size: 1.5rem;
      padding-bottom: 3rem;
-     color: rgba(255, 255, 255, 1);
+     font-weight: 100;
+     color: var(--bg-color);
      display: flex;
      justify-content: space-between;
      gap: 1rem;
@@ -920,10 +860,10 @@ footer {
 
 .top a i {
      font-size: 4rem;
-     color: rgba(255, 255, 255, 1);
+     color: var(--bg-color);
 }
 
-
+/* Index Page code end page  */
 
 
 
@@ -1013,6 +953,10 @@ footer {
      .footer .credit {
           justify-content: center;
      }
+
+     /* Index Page code end page  */
+
+
 }
 
 @media (width<778px) {
@@ -1026,7 +970,7 @@ footer {
      }
 
      .home {
-          background-color: rgb(180, 176, 176);
+          background-color: #3d4854e6;
      }
 
      .form-container {
@@ -1121,6 +1065,8 @@ footer {
      .partners .container .item {
           flex: 0 0 50%;
      }
+
+     /* Index Page code end page  */
 }
 
 @media (width<601px) {
@@ -1139,10 +1085,15 @@ footer {
      .box {
           width: 90%;
      }
+
+
+     /* Index Page code end page  */
 }
 
 @media (width<401px) {
      .partners .container .item {
           flex: 0 0 100%;
      }
+
+     /* Index Page code end page  */
 }
