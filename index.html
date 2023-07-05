@@ -7,7 +7,8 @@
      <title>HSG Properties</title>
      <!-- customs css  -->
      <link rel="stylesheet" href="css/style.css">
-     <!-- <link rel="stylesheet" href="css/product-slider.css"> -->
+     <!-- <link rel="stylesheet" href="css/main-carosel.css"> -->
+     <link rel="stylesheet" href="css/home-carosel.css">
      <!-- boxicons link -->
      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -148,7 +149,7 @@
      </header>
      <!-- home section  -->
      <section class="home" id="home">
-          <div class="carousel">
+          <!-- <div class="carousel">
                <div class="carousel-container">
                     <div class="carousel-item">
                          <img src="img/carosel/1.jpg" alt="Image 1">
@@ -165,13 +166,102 @@
                     <div class="carousel-item">
                          <img src="img/carosel/5.jpg" alt="Image 1">
                     </div>
-                    <!-- Add more carousel items as needed -->
                </div>
 
                <a class="carousel-control prev" href="#">&lt;</a>
                <a class="carousel-control next" href="#">&gt;</a>
-          </div>
-          <div class="form-container">
+          </div> -->
+          <!-- Carosel new start -->
+          <!-- <div class="page">
+               <div class="page-content"> -->
+                    <!-- <div class="slider-wrapper"> -->
+                         <!-- <div class="slider-container">
+                              <div id="slider-1" class="slider">
+                                   <div class="slider__slides">
+                                        <div class="slider__slide nuance-1">
+                                             <img src="img/carosel/1.jpg" alt="Image 1">
+                                        </div>
+                                        <div class="slider__slide nuance-2">
+                                             <img src="img/carosel/3.jpg" alt="Image 1">
+                                        </div>
+                                        <div class="slider__slide nuance-3">
+                                             <img src="img/carosel/4.jpg" alt="Image 1">
+                                        </div>
+                                        <div class="slider__slide nuance-4">
+                                             <img src="img/carosel/2.jpg" alt="Image 1">
+                                        </div>
+                                        <div class="slider__slide nuance-5">
+                                             <img src="img/carosel/5.jpg" alt="Image 1">
+                                        </div>
+                                   </div>
+
+                                   <div class="slider__buttons">
+                                        <a href="#" class="slider__button--prev">
+                                             <i class="material-icons"><i class='bx bx-chevron-left'></i></i>
+                                        </a>
+                                        <a href="#" class="slider__button--next">
+                                             <i class="material-icons"><i class='bx bx-chevron-right'></i></i>
+                                        </a>
+
+                                   </div>
+                              </div>
+
+                         </div> -->
+                    <!-- </div>
+               </div>
+          </div> -->
+          <!-- Carosel end start -->
+
+          <!-- again new carosel  -->
+          <div class="carousel">
+               <div class="carousel-inner">
+                   <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+                   <div class="carousel-item">
+                    <img src="img/carosel/1.jpg" alt="Image 1">
+                   </div>
+                   <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+                   <div class="carousel-item">
+                    <img src="img/carosel/3.jpg" alt="Image 1">
+                   </div>
+                   <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
+                   <div class="carousel-item">
+                    <img src="img/carosel/4.jpg" alt="Image 1">
+                   </div>
+                   <input class="carousel-open" type="radio" id="carousel-4" name="carousel" aria-hidden="true" hidden="">
+                   <div class="carousel-item">
+                    <img src="img/carosel/2.jpg" alt="Image 1">
+                   </div>
+                   <input class="carousel-open" type="radio" id="carousel-5" name="carousel" aria-hidden="true" hidden="">
+                   <div class="carousel-item">
+                    <img src="img/carosel/5.jpg" alt="Image 1">
+                   </div>
+                   <label for="carousel-3" class="carousel-control prev control-1">‹</label>
+                   <label for="carousel-2" class="carousel-control next control-1">›</label>
+                   <label for="carousel-1" class="carousel-control prev control-2">‹</label>
+                   <label for="carousel-3" class="carousel-control next control-2">›</label>
+                   <label for="carousel-2" class="carousel-control prev control-3">‹</label>
+                   <label for="carousel-1" class="carousel-control next control-3">›</label>
+                   <ol class="carousel-indicators">
+                       <li>
+                           <label for="carousel-1" class="carousel-bullet">•</label>
+                       </li>
+                       <li>
+                           <label for="carousel-2" class="carousel-bullet">•</label>
+                       </li>
+                       <li>
+                           <label for="carousel-3" class="carousel-bullet">•</label>
+                       </li>
+                       <li>
+                           <label for="carousel-4" class="carousel-bullet">•</label>
+                       </li>
+                       <li>
+                           <label for="carousel-5" class="carousel-bullet">•</label>
+                       </li>
+                   </ol>
+               </div>
+           </div>
+          <!-- end new carosel  -->
+          <!-- <div class="form-container">
                <h2 class="heading">
                     Your Trusted Brokers in Dubai
                </h2>
@@ -227,7 +317,7 @@
                          </div>
                     </form>
                </div>
-          </div>
+          </div> -->
      </section>
      <!-- sale section  -->
      <section class="sale" id="sale">
@@ -1298,8 +1388,49 @@
      </footer>
 </body>
 <script src="js/script.js"></script>
-<script src="js/carosel.js"></script>
+<!-- <script src="js/carosel.js"></script> -->
+<!-- <script src="js/carosel-main-home.js"></script> -->
 <script src="js/carosel-products.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- 
+<script>
+     function main() {
+          var slider = new Slider(document.querySelector('#slider-1'), {
+               items: 1,
+               autoplay: true,
+               responsive: false
+          }),
+               slider2 = new Slider(document.querySelector('#slider-2'), {
+                    items: 4,
+                    responsive: true,
+                    mobile: {
+                         items: 1
+                    },
+                    tablet: {
+                         width: 670,
+                         items: 2
+                    },
+                    desktop: {
+                         width: 1040,
+                         items: 3
+                    },
+                    deviceChanged: function (e) {
+                         console.log(e);
+                    },
+                    navChanged: function (e) {
+                         console.log(e);
+                    }
+               }),
+               slider3 = new Slider(document.querySelector('#slider-3'), {
+                    items: 1,
+                    autoplay: false,
+                    responsive: false,
+                    maxHeight: 600
+               });
+     }
+
+     document.addEventListener('DOMContentLoaded', main);
+</script> -->
 
 </html>
