@@ -107,7 +107,7 @@ section {
 
 .navbar ul a {
      color: black;
-     transition: .2s ease-in;
+     transition: .2s ease;
 }
 
 .navbar ul a:hover {
@@ -116,6 +116,10 @@ section {
 
 .navbar ul li {
      position: relative;
+}
+
+.navbar ul li a span {
+     padding: 1rem 0;
 }
 
 .navbar ul li .dropdown {
@@ -176,6 +180,7 @@ section {
 .home {
      background-color: var(--bg-second-color);
      margin-top: 12px;
+     position: relative;
 }
 
 .home .carousel {
@@ -686,7 +691,7 @@ section {
      background-repeat: no-repeat;
      background-size: cover;
      width: 100%;
-     min-height: 70vh;
+     min-height: 500px;
      display: flex;
      justify-content: space-around;
      align-items: center;
@@ -769,7 +774,7 @@ section {
      background-repeat: no-repeat;
      background-size: cover;
      width: 100%;
-     min-height: 45vh;
+     min-height: 300px;
      display: flex;
      justify-content: space-around;
      align-items: center;
@@ -1069,8 +1074,9 @@ footer {
 .buy-home .img-container {
      margin-top: 90px;
      position: relative;
-     height: 60vh;
+     /* height: 60vh; */
      min-height: 400px;
+     height: 450px;
 }
 
 .buy-home .img-container .content {
@@ -1437,6 +1443,160 @@ footer {
      margin-top: 2rem;
 }
 
+
+
+.buy-home .heading {
+     text-transform: capitalize;
+}
+
+
+/* about page code  */
+
+.about-us {
+     display: flex;
+     gap: 3rem;
+     padding: 4rem 10% 0;
+     margin: 0;
+}
+
+.about-us .left {
+     width: 100%;
+}
+
+.about-us .left img {
+     width: 100%;
+     object-fit: cover;
+     height: 100%;
+}
+
+.about-us .right {
+     height: 100%;
+}
+
+.about-us .right img {
+     width: 100%;
+     object-fit: cover;
+     /* height: 44.7%; */
+}
+
+.about-us .right .heading {
+     text-align: left;
+     margin: 2rem 0 0;
+     padding: 0;
+}
+
+.about-us .right p {
+     font-size: 1.7rem;
+     color: #999;
+     line-height: 2.5rem;
+     margin: 1.5rem 0;
+}
+
+.about-us .right h3 {
+     font-size: 2rem;
+     color: var(--light-black);
+}
+
+.find-place {
+     min-height: 200px;
+     height: 200px;
+     margin-top: 0;
+     padding-top: 0;
+}
+
+.find-place .img-container {
+     margin-top: 0;
+     min-height: 200px;
+     height: 200px;
+}
+
+.find-place .img-container .content {
+     display: flex;
+     justify-content: space-between;
+     flex-wrap: wrap;
+     gap: 2rem;
+}
+
+.find-place .img-container .content div:first-child {
+     text-align: left;
+}
+
+.find-place .img-container .content h2 {
+     margin-bottom: 1rem;
+     text-align: left;
+     padding-left: 0;
+}
+
+.find-place .img-container .content .links a {
+     background-color: var(--bg-color);
+     border: var(--border-light-black);
+     color: var(--light-black);
+}
+
+.find-place .img-container .content .links a:hover {
+     background-color: var(--light-black);
+     color: var(--bg-color);
+     border: var(--border-second);
+}
+
+/* meet team page */
+
+.team {
+     padding: 4rem 5% 4rem;
+}
+
+.team-container {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     align-items: center;
+     gap: 4rem;
+}
+
+.team-box {
+     box-shadow: 0 0 1rem var(--bg-color);
+     visibility: visible;
+     opacity: 1;
+     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+     transition: opacity 2s cubic-bezier(0.5, 0, 0, 1) 0.2s, transform 2s cubic-bezier(0.5, 0, 0, 1) 0.2s;
+}
+
+.team-box .up {
+     overflow: hidden;
+     width: 100%;
+     height: 100%;
+}
+
+.team-box img {
+     width: 100%;
+     transition: .5s ease;
+     opacity: 1;
+     transform: scale(1.02);
+}
+
+.team-box:hover img {
+     transform: scale(1.1);
+     opacity: 2;
+}
+
+.team-box .down {
+     background-color: var(--main-color);
+     color: var(--bg-color);
+     padding: 5%;
+     min-height: 10rem;
+}
+
+.team-box .down p {
+     font-size: 1.5rem;
+     font-weight: 700;
+}
+
+.team-box .down a h3 {
+     font-size: 2rem;
+     font-weight: 700;
+     color: var(--bg-color);
+     margin-bottom: 1rem;
+}
+
 @media (width>1400px) {
      html {
           font-size: 75%;
@@ -1444,6 +1604,12 @@ footer {
 
      .slider .slide .box {
           width: 450px;
+     }
+
+     /* meet team page */
+
+     .team {
+          padding: 4rem 9% 4rem;
      }
 
 }
@@ -1515,9 +1681,9 @@ footer {
           display: block;
      }
 
-     .home .form-container {
+     /* .home .form-container {
           top: 60%;
-     }
+     } */
 
      .buy .background {
           padding: 0 2%;
@@ -1541,6 +1707,16 @@ footer {
 
      .product .container .left {
           width: 100%;
+     }
+
+     /* team page code  */
+
+     .team {
+          padding: 4rem 3% 4rem;
+     }
+
+     .team-container {
+          gap: 2rem;
      }
 }
 
@@ -1683,6 +1859,23 @@ footer {
      .dual-color-container .line div ul {
           font-size: 1.6rem;
      }
+
+
+     /* about us page code  */
+
+     .about-us {
+          padding: 3rem 3% 0;
+     }
+
+     .about-us .left {
+          display: none;
+     }
+
+     /* team page code  */
+     .team-container {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+     }
 }
 
 @media (width<601px) {
@@ -1698,6 +1891,11 @@ footer {
           top: -2rem;
      } */
 
+     .carousel-indicators {
+          /* home carosel line hide  */
+          display: none;
+     }
+
      .box {
           width: 90%;
      }
@@ -1711,7 +1909,7 @@ footer {
 @media only screen and (max-width: 420px) {
      .slider {
           padding: 0;
-          /* margin: 0 6%; */
+          margin: 0 30px;
      }
 
      .slider .slide .box {
@@ -1732,6 +1930,11 @@ footer {
 
      .control-next-btn {
           top: 37%;
+     }
+
+     /* team page code  */
+     .team-container {
+          gap: 1rem;
      }
 }
 
