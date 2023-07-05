@@ -1211,6 +1211,57 @@ footer {
      border: var(--border-blue);
 }
 
+/* services section  */
+
+.buy-home.center .img-container .content {
+     top: 50%;
+}
+
+
+.dual-color-container .line {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     justify-content: space-between;
+     gap: 2rem;
+     padding: 2% 7%;
+}
+
+.dual-color-container .line.one {
+     grid-template-columns: 1fr;
+}
+
+.dual-color-container .line.grey {
+     background-color: #d4d4d447;
+}
+
+.dual-color-container .line.white {
+     background-color: var(--bg-color);
+}
+
+.dual-color-container .line div {
+     /* min-width: 300px; */
+     margin: 2rem 0;
+     line-height: 2.5rem;
+}
+
+
+.dual-color-container .line div h2 {
+     font-size: 2.4rem;
+     color: var(--main-color);
+     margin-bottom: 1rem;
+}
+
+.dual-color-container .line div p {
+     font-size: 1.5rem;
+     color: #000;
+}
+
+.dual-color-container .line div ul {
+     font-size: 1.5rem;
+     color: #000;
+     margin-left: 2rem;
+     margin-top: 2rem;
+}
 
 @media (width<992px) {
      html {
@@ -1335,6 +1386,10 @@ footer {
           height: max-content;
      }
 
+     .buy-home .img-container .content {
+          top: 50%;
+     }
+
      .buy-home .img-container .form-container {
           position: static;
           top: 0rem;
@@ -1424,6 +1479,21 @@ footer {
      }
 
      /* Index Page code end page  */
+
+     /* services section  */
+
+     .dual-color-container .line {
+          grid-template-columns: 1fr;
+          padding: 2% 3%;
+     }
+
+     .dual-color-container .line div p {
+          font-size: 1.6rem;
+     }
+
+     .dual-color-container .line div ul {
+          font-size: 1.6rem;
+     }
 }
 
 @media (width<601px) {

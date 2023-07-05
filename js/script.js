@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
      //// this is to prevent menu list to not clickable
 
 
-     let anchorTags = document.querySelectorAll('.navbar ul > li > a');
+     let anchorTags = document.querySelectorAll('.navbar ul > li > a.notclick');
 
      if (window.matchMedia('(max-width: 991px)').matches) {
           anchorTags.forEach((anchorTag) => {
